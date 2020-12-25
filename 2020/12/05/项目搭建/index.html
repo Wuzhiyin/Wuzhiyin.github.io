@@ -132,6 +132,57 @@
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> 配置分组</span><br><span class="line">//1. Nacos prop命名空间下添加组名为dev的gulimall-coupon.properties</span><br><span class="line">//2. 在bootstrap.properties添加代码</span><br><span class="line">spring.cloud.nacos.config.group=dev</span><br><span class="line"></span><br><span class="line">实际场景:每个微服务创建自己的命名空间，使用配置分组区分环境，dev，test，prod</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h3 id="nacos配置中心-加载多配置集"><a href="#nacos配置中心-加载多配置集" class="headerlink" title="nacos配置中心-加载多配置集"></a>nacos配置中心-加载多配置集</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">将application.yml中的配置添加到nacos中</span><br><span class="line">//1. nacos新建配置datasource.yml Group dev/ 格式 YAML</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/datasource配置.png" width="60%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//2. nacos新建配置mybatis.yml Group dev/ 格式 YAML</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/mybatis配置.png" width="60%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//3. nacos新建配置other.yml Group dev/ 格式 YAML</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/other配置.png" width="60%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//4. bootstrap.properties添加</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/配置多配置集.png" width="70%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//5. 测试 http://localhost:7000/coupon/coupon/list</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gateway-创建并测试API网关"><a href="#Gateway-创建并测试API网关" class="headerlink" title="Gateway-创建并测试API网关"></a>Gateway-创建并测试API网关</h3><blockquote>
+<p>Gateway介绍: <a target="_blank" rel="noopener" href="https://spring.io/projects/spring-cloud-gateway">https://spring.io/projects/spring-cloud-gateway</a> </p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//1. New Module-&gt;Spring Initalizr-&gt;gulimall-gateway</span><br><span class="line">dependency : Gateway</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/新建gateway模块.png" width="100%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//2. pom.xml添加common模块</span><br><span class="line">//3. 修改springboot版本及spring-cloud.version</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/修改版本.png" width="60%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//4. GulimallGatewayApplication.java</span><br><span class="line">	//开启服务注册发现</span><br><span class="line">	@EnableDiscoveryClient</span><br><span class="line">//5. application.properties添加</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/gatewayApplication配置.png" width="80%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//6. bootstrap.properties添加</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/gatewayBootstrap配置.png" width="80%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//7. 新建命名空间 gateway 新建配置 gulimall-gateway.yml</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/gulimallgatewaynacos配置.png" width="100%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//8. 启动报错:</span><br><span class="line">	1.java: 程序包org.junit.jupiter.api不存在 原因: springboot高版本替换</span><br><span class="line">	解决方案: 重新导包 import org.junit.Test;</span><br><span class="line">	2. Failed to configure a DataSource 原因: common中mybatis-plus需要数据源相关配置</span><br><span class="line">	解决方案: 添加注解@SpringBootApplication(exclude = &#123;DataSourceAutoConfiguration.class&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">配置API网关</span><br><span class="line">//1. 添加application.yml</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/12/05/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/gatewayApplicationyml.png" width="100%">
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//2. 测试 </span><br><span class="line">http://localhost:88/?url=qq</span><br><span class="line">http://localhost:88/?url=baidu</span><br></pre></td></tr></table></figure>
+
+
+
 
     </div>
 </article>
