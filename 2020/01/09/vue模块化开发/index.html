@@ -109,7 +109,38 @@
 
 <h3 id="整合ElementUI快速开发"><a href="#整合ElementUI快速开发" class="headerlink" title="整合ElementUI快速开发"></a>整合ElementUI快速开发</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//1. npm i element-ui</span><br><span class="line">//2. 在main.js引入</span><br><span class="line">    import ElementUI from &#x27;element-ui&#x27;;</span><br><span class="line">    import &#x27;element-ui/lib/theme-chalk/index.css&#x27;;</span><br><span class="line">    Vue.use(ElementUI);</span><br></pre></td></tr></table></figure>
 
-<h3 id="商品服务-API三级分类-查询-递归树形结构数据获取"><a href="#商品服务-API三级分类-查询-递归树形结构数据获取" class="headerlink" title="商品服务-API三级分类-查询-递归树形结构数据获取"></a>商品服务-API三级分类-查询-递归树形结构数据获取</h3>
+<h3 id="商品服务-API三级分类-查询-递归树形结构数据获取"><a href="#商品服务-API三级分类-查询-递归树形结构数据获取" class="headerlink" title="商品服务-API三级分类-查询-递归树形结构数据获取"></a>商品服务-API三级分类-查询-递归树形结构数据获取</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//1. 将pms_catelog.sql 数据导入到gulimall_pms</span><br><span class="line">//2. gulimall-product下CategoryController修改/list</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/03.png" width="70%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/04.png" width="70%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/05.png" width="70%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/06.png" width="70%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/07.png" width="70%">
+
+<h3 id="商品服务-API三级分类-配置网关路由与路径重写"><a href="#商品服务-API三级分类-配置网关路由与路径重写" class="headerlink" title="商品服务-API三级分类-配置网关路由与路径重写"></a>商品服务-API三级分类-配置网关路由与路径重写</h3><p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-cloud-gateway/docs/2.2.8.BUILD-SNAPSHOT/reference/html/#the-rewritepath-gatewayfilter-factory">参考:https://docs.spring.io/spring-cloud-gateway/docs/2.2.8.BUILD-SNAPSHOT/reference/html/#the-rewritepath-gatewayfilter-factory</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//1. 运行renren-fast,运行renren-fast-vue(输入npm run dev)</span><br><span class="line">//2. 添加一级目录(商品系统)和一级菜单(分类维护)</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/08.png" width="70%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/09.png" width="70%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/10.png" width="70%">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;3. 在renren-fast-vue(src\views\modules)新建文件夹(product)</span><br><span class="line">&#x2F;&#x2F;4. 在product下新建category.vue</span><br><span class="line">&#x2F;&#x2F;5. 添加elementUI组件(Tree树形控件)</span><br><span class="line">&#x2F;&#x2F;6. 获取后台数据</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/11.png" width="80%">
+
+<h5 id="解决404问题"><a href="#解决404问题" class="headerlink" title="解决404问题"></a>解决404问题</h5><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/12.png" width="80%">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1. 修改index.js </span><br><span class="line">window.SITE_CONFIG[&#39;baseUrl&#39;] &#x3D; &#39;http:&#x2F;&#x2F;localhost:88&#x2F;api&#39;;</span><br><span class="line">注:修改好后刷新页面,自动跳转至登录,验证码不显示,原因:renren-fast没有注册到注册中心</span><br><span class="line">&#x2F;&#x2F;2. POM.xml添加gulimall-common依赖</span><br><span class="line">&#x2F;&#x2F;3. application.yml添加</span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: renren-fast</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: 127.0.0.1:8848</span><br><span class="line">&#x2F;&#x2F;4. 开启注册发现功能(RenrenApplication.java),重启服务查看nacos是否注册成功</span><br><span class="line">@EnableDiscoveryClient</span><br><span class="line">&#x2F;&#x2F;5. gulimall-gateway下的application.yml添加如下代码</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/13.png" width="70%">
+
+
     </div>
 </article>
             </div>
