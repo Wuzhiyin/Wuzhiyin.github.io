@@ -163,7 +163,7 @@
 
 <h3 id="商品服务-API三级分类-删除-页面效果"><a href="#商品服务-API三级分类-删除-页面效果" class="headerlink" title="商品服务-API三级分类-删除-页面效果"></a>商品服务-API三级分类-删除-页面效果</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/17.png" width="80%">
 
-<h3 id="商品服务-API-三级分类-删除-逻辑删除"><a href="#商品服务-API-三级分类-删除-逻辑删除" class="headerlink" title="商品服务-API-三级分类-删除-逻辑删除"></a>商品服务-API-三级分类-删除-逻辑删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="商品服务-API-三级分类-删除-逻辑删除"><a href="#商品服务-API-三级分类-删除-逻辑删除" class="headerlink" title="商品服务-API-三级分类-删除-逻辑删除"></a>商品服务-API-三级分类-删除-逻辑删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1. 修改CategoryController中的删除方法</span><br></pre></td></tr></table></figure>
 
 <img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/18.png" width="80%">
 
@@ -183,6 +183,46 @@
 <img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/23.png" width="80%">
 
 <img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/24.png" width="80%">
+
+
+
+<h3 id="商品服务-API-三级分类-删除-删除效果细化"><a href="#商品服务-API-三级分类-删除-删除效果细化" class="headerlink" title="商品服务-API-三级分类-删除-删除效果细化"></a>商品服务-API-三级分类-删除-删除效果细化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1. 配置httpGET httpPOST代码片段(参考role.vue)</span><br><span class="line">&quot;http-get请求&quot;:&#123;</span><br><span class="line">    &quot;prefix&quot;: &quot;httpget&quot;,</span><br><span class="line">    &quot;body&quot;: [</span><br><span class="line">    &quot;this.\\$http(&#123;&quot;,</span><br><span class="line">    &quot;url:this.\\$http.adornUrl(&#39;&#39;),&quot;,</span><br><span class="line">    &quot;method: &#39;get&#39;,&quot;,</span><br><span class="line">    &quot;params: this.\\$http.adornParams(&#123;&#125;)&quot;,</span><br><span class="line">    &quot;&#125;).then((&#123;data&#125;)&#x3D;&gt;&#123;&quot;,</span><br><span class="line">    &quot;&#125;)&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;description&quot;: &quot;http请求&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;http-post请求&quot;:&#123;</span><br><span class="line">    &quot;prefix&quot;: &quot;httppost&quot;,</span><br><span class="line">    &quot;body&quot;: [</span><br><span class="line">    &quot;this.\\$http(&#123;&quot;,</span><br><span class="line">    &quot;url:this.\\$http.adornUrl(&#39;&#39;),&quot;,</span><br><span class="line">    &quot;method: &#39;post&#39;,&quot;,</span><br><span class="line">    &quot;data: this.\\$http.adornData(data, false)&quot;,</span><br><span class="line">    &quot;&#125;).then((&#123;data&#125;)&#x3D;&gt;&#123;&quot;,</span><br><span class="line">    &quot;&#125;)&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;description&quot;: &quot;httpPOST请求&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;2. 删除效果优化</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/25.png" width="80%">
+
+<h3 id="商品服务-API-三级分类-新增-新增效果完成"><a href="#商品服务-API-三级分类-新增-新增效果完成" class="headerlink" title="商品服务-API-三级分类-新增-新增效果完成"></a>商品服务-API-三级分类-新增-新增效果完成</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/26.png" width="80%">
+
+<h3 id="商品服务-API-三级分类-修改-基本修改效果完成"><a href="#商品服务-API-三级分类-修改-基本修改效果完成" class="headerlink" title="商品服务-API-三级分类-修改-基本修改效果完成"></a>商品服务-API-三级分类-修改-基本修改效果完成</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/27.png" width="80%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/28.png" width="80%">
+
+<h3 id="商品服务-API-三级分类-修改-拖拽效果"><a href="#商品服务-API-三级分类-修改-拖拽效果" class="headerlink" title="商品服务-API-三级分类-修改-拖拽效果"></a>商品服务-API-三级分类-修改-拖拽效果</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/29.png" width="80%">
+
+<h3 id="商品服务-API-三级分类-修改-拖拽数据收集"><a href="#商品服务-API-三级分类-修改-拖拽数据收集" class="headerlink" title="商品服务-API-三级分类-修改-拖拽数据收集"></a>商品服务-API-三级分类-修改-拖拽数据收集</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/30.png" width="80%">
+
+<h3 id="商品服务-API-三级分类-修改-拖拽功能完成"><a href="#商品服务-API-三级分类-修改-拖拽功能完成" class="headerlink" title="商品服务-API-三级分类-修改-拖拽功能完成"></a>商品服务-API-三级分类-修改-拖拽功能完成</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/31.png" width="80%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/32.png" width="80%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/33.png" width="80%">
+
+<h3 id="商品服务-API-三级分类-修改-批量拖拽效果"><a href="#商品服务-API-三级分类-修改-批量拖拽效果" class="headerlink" title="商品服务-API-三级分类-修改-批量拖拽效果"></a>商品服务-API-三级分类-修改-批量拖拽效果</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/34.png" width="80%">
+
+<h3 id="商品服务-API-三级分类-删除-批量删除-amp-小结"><a href="#商品服务-API-三级分类-删除-批量删除-amp-小结" class="headerlink" title="商品服务-API-三级分类-删除-批量删除&amp;小结"></a>商品服务-API-三级分类-删除-批量删除&amp;小结</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/35.png" width="80%">
+
+<h3 id="商品服务-API-品牌管理-使用逆向工程的前后端代码"><a href="#商品服务-API-品牌管理-使用逆向工程的前后端代码" class="headerlink" title="商品服务-API-品牌管理-使用逆向工程的前后端代码"></a>商品服务-API-品牌管理-使用逆向工程的前后端代码</h3><img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/36.png" width="80%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/37.png" width="80%">
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/38.png" width="80%">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;显示新增和批量删除按钮</span><br><span class="line">方法一:删除v-if 权限判断</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/39.png" width="80%">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">方法二:ctrl+shift+f 全局搜索 isAuth 将返回判断为true 案例使用该方案</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/01/09/vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/40.png" width="80%">
     </div>
 </article>
             </div>
