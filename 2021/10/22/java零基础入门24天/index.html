@@ -14,7 +14,10 @@
 
 
 
-    <meta name="description" content="java零基础入门24天"/>
+    <meta name="description" content="java零基础入门24天
+
+1.Java概述1.1 Java语言跨平台原理(理解)
+ Java程序并非是直接运行的，Java编译器将Java源程序编译成与平台无关的字节码文件(class文件)，然后由Java虚拟机（JVM）对字节码文件解释执行。所以在不同的操作系统下，只需安装不同的Java虚..."/>
 
 
 <meta name="Robots" content="all">
@@ -95,6 +98,79 @@
 
     <div class="post-content">
         <h2 id="java零基础入门24天"><a href="#java零基础入门24天" class="headerlink" title="java零基础入门24天"></a>java零基础入门24天</h2><a id="more"></a>
+
+<h2 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1.Java概述"></a>1.Java概述</h2><h3 id="1-1-Java语言跨平台原理-理解"><a href="#1-1-Java语言跨平台原理-理解" class="headerlink" title="1.1 Java语言跨平台原理(理解)"></a>1.1 Java语言跨平台原理(理解)</h3><blockquote>
+<p> Java程序并非是直接运行的，Java编译器将Java源程序编译成与平台无关的字节码文件(class文件)，然后由Java虚拟机（JVM）对字节码文件解释执行。所以在不同的操作系统下，只需安装不同的Java虚拟机即可实现java程序的跨平台。 </p>
+</blockquote>
+<h3 id="1-2-JRE和JDK（记忆）"><a href="#1-2-JRE和JDK（记忆）" class="headerlink" title="1.2 JRE和JDK（记忆）"></a>1.2 JRE和JDK（记忆）</h3><blockquote>
+<p> JVM（Java Virtual Machine），Java虚拟机</p>
+<p>JRE（Java Runtime Environment），Java运行环境，包含了JVM和Java的核心类库（Java API）</p>
+<p>JDK（Java Development Kit）称为Java开发工具，包含了JRE和开发工具</p>
+<p>总结：我们只需安装JDK即可，它包含了java的运行环境和虚拟机。 </p>
+</blockquote>
+<h2 id="2-第一个演示程序"><a href="#2-第一个演示程序" class="headerlink" title="2.第一个演示程序"></a>2.第一个演示程序</h2><h3 id="2-1-常用DOS命令（应用）"><a href="#2-1-常用DOS命令（应用）" class="headerlink" title="2.1 常用DOS命令（应用）"></a>2.1 常用DOS命令（应用）</h3><table>
+<thead>
+<tr>
+<th align="left">操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">盘符名称:</td>
+<td>盘符切换。E:回车，表示切换到E盘。</td>
+</tr>
+<tr>
+<td align="left">dir</td>
+<td>查看当前路径下的内容。</td>
+</tr>
+<tr>
+<td align="left">cd 目录</td>
+<td>进入单级目录。cd itheima</td>
+</tr>
+<tr>
+<td align="left">cd ..</td>
+<td>回退到上一级目录。</td>
+</tr>
+<tr>
+<td align="left">cd 目录1\目录2…</td>
+<td>进入多级目录。cd itheima\JavaSE</td>
+</tr>
+<tr>
+<td align="left">cd \</td>
+<td>回退到盘符目录。</td>
+</tr>
+<tr>
+<td align="left">cls</td>
+<td>清屏。</td>
+</tr>
+<tr>
+<td align="left">exit</td>
+<td>退出命令提示符窗口。</td>
+</tr>
+</tbody></table>
+<h2 id="3-Java基础语法"><a href="#3-Java基础语法" class="headerlink" title="3.Java基础语法"></a>3.Java基础语法</h2><h3 id="3-1-注释（理解）"><a href="#3-1-注释（理解）" class="headerlink" title="3.1 注释（理解）"></a>3.1 注释（理解）</h3><blockquote>
+<p>注释是对代码的解释和说明文字  单行注释、多行注释、文档注释</p>
+</blockquote>
+<h3 id="3-2-关键字（理解）"><a href="#3-2-关键字（理解）" class="headerlink" title="3.2 关键字（理解）"></a>3.2 关键字（理解）</h3><blockquote>
+<p>关键字是指被java语言赋予了特殊含义的单词。 </p>
+</blockquote>
+<h3 id="3-3-常量（应用）"><a href="#3-3-常量（应用）" class="headerlink" title="3.3 常量（应用）"></a>3.3 常量（应用）</h3><blockquote>
+<p>常量：在程序运行过程中，其值不可以发生改变的量。 </p>
+</blockquote>
+<h3 id="3-4-数据类型（记忆、应用）"><a href="#3-4-数据类型（记忆、应用）" class="headerlink" title="3.4 数据类型（记忆、应用）"></a>3.4 数据类型（记忆、应用）</h3><blockquote>
+<p>Java中的基本数据类型： 4类8种 (byte short int long float double char boolean)</p>
+</blockquote>
+<h3 id="3-5-变量（应用）"><a href="#3-5-变量（应用）" class="headerlink" title="3.5 变量（应用）"></a>3.5 变量（应用）</h3><blockquote>
+<p>变量：在程序运行过程中，其值可以发生改变的量 </p>
+</blockquote>
+<h3 id="3-6-标识符（记忆、理解）"><a href="#3-6-标识符（记忆、理解）" class="headerlink" title="3.6 标识符（记忆、理解）"></a>3.6 标识符（记忆、理解）</h3><blockquote>
+<p>标识符是用户编程时使用的名字，用于给类、方法、变量、常量等命名。 </p>
+<p>Java中标识符的组成规则：<br>由字母、数字、下划线“_”、美元符号“$”组成，第一个字符不能是数字 </p>
+</blockquote>
+<h3 id="3-7-类型转换（理解）"><a href="#3-7-类型转换（理解）" class="headerlink" title="3.7 类型转换（理解）"></a>3.7 类型转换（理解）</h3><blockquote>
+<p>在Java中，一些数据类型之间是可以相互转换的。分为两种情况：自动类型转换和强制类型转换。 </p>
+</blockquote>
+
     </div>
 </article>
             </div>
